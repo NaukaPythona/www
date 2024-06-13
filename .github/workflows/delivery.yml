@@ -1,0 +1,50 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - production
+    - preview
+
+run-name: Build & deploy to ${{github.ref_name}}
+
+concurrency:
+  group: pages-${{github.ref_name}}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  stage: ${{github.ref_name}}
+  preview_repo: NaukaPythona/preview.naukapythona.com
+  build_ref: build/${{github.ref_name}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: getsentry/action-setup-venv@v2.1.0
+      with:
+        cache-dependency-path: requirements.lock
+        install-cmd: pip install -r requirements.lock
+    - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
+  preview:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{github.ref_name == 'preview'}}
+    environment:
+      name: ${{github.ref_name}}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{env.preview_repo}}
+        ref: ${{env.build_ref}}
+        token: ${{ secrets.PREVIEW_REPO_TOKEN }} 
+    - run: |
+        git remote add upstream https://github.com/${{github.repository}}
+        git fetch upstream
+        git checkout upstream/${{env.build_ref}}
+        git push origin HEAD:${{env.build_ref}} -f

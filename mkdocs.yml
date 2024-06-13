@@ -1,0 +1,83 @@
+site_name: NaukaPythona.com
+site_description: Zostań magiem języka węży 🐍
+site_url: https://naukapythona.com/
+edit_uri: https://github.com/naukapythona/naukapythona.com/edit/main/public/
+docs_dir: public/
+watch: [public]
+
+theme:
+  name: material
+  features:
+  - announce.dismiss
+  - header.autohide
+  - content.action.edit
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - content.tabs.link
+  - content.tooltips
+  - navigation.footer
+  - navigation.indexes
+  - navigation.sections
+  - navigation.top
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.tracking
+  - search.highlight
+  - search.suggest
+  - toc.follow
+  palette:
+  - media: > 
+      (prefers-color-scheme: light)
+    scheme: default
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  - media: > 
+      (prefers-color-scheme: dark)
+    scheme: slate
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+
+markdown_extensions:
+- admonition
+- footnotes
+- pymdownx.emoji
+- codehilite
+- pymdownx.magiclink
+- pymdownx.superfences
+- md_in_html
+- mdx_include:
+    base_path: public/
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.highlight:
+    use_pygments: true
+- toc:
+    permalink: true
+
+hooks:
+- hooks/cname.py
+
+plugins:
+- search
+- markdown-exec
+- git-committers:
+    enabled: !ENV [DEPLOY, false]
+    repository: NaukaPythona/NaukaPythona.com
+
+nav:
+- Strona główna: strona_glowna.md
+- Trenerzy: trenerzy.md
+- Nauka:
+  - nauka/nauka.md
+  - Spotkanie wstępne: nauka/spotkanie_wstepne.md
+  - Pierwsze zajęcia: nauka/pierwsze_zajecia.md
+- Zapisy: zapisy.md
+- Kontakt: kontakt.md
+- Polityka Prywatności: polityka_prywatnosci.md

@@ -1,0 +1,52 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - production
+    - preview
+
+name: Deliver
+run-name: Build & deploy to ${{github.ref_name}}
+
+concurrency:
+  group: pages-${{github.ref_name}}
+  cancel-in-progress: false
+
+env:
+  stage: ${{github.ref_name}}
+  production_repo: NaukaPythona/naukapythona.com
+  build_ref: build/${{github.ref_name}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: getsentry/action-setup-venv@v2.1.0
+      with:
+        cache-dependency-path: requirements-dev.lock
+        install-cmd: >
+          pip install uv
+          && pip uninstall setuptools --yes
+          && uv pip install -r requirements-dev.lock
+    - uses: pypa/gh-action-pip-audit@v1.0.8
+      with:
+        virtual-environment: .venv/
+    - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
+  production:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{github.ref_name == 'production'}}
+    environment:
+      name: ${{github.ref_name}}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{env.production_repo}}
+        ref: ${{env.build_ref}}
+        token: ${{secrets.PRODUCTION_REPO_TOKEN}}
+    - run: |
+        git remote add preview https://github.com/${{github.repository}}
+        git fetch preview
+        git checkout preview/${{env.build_ref}}
+        git push origin HEAD:${{env.build_ref}} -f

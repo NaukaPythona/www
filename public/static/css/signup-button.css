@@ -1,0 +1,18 @@
+.signup-button {
+  font-size: large;
+  padding: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  background-color: #185888;
+  animation: 1s infinite alternate signup-button-flash;
+}
+
+@keyframes signup-button-flash {
+  from {
+      background-color: #185888;
+  }
+
+  to {
+      background-color: var(--theme-dark-transparent);
+  }
+}

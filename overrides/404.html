@@ -1,0 +1,21 @@
+{% extends "./main.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<script>
+window.setTimeout(function() {
+    window.location.href = '{{ config.extra.homepage | d(nav.homepage.url, true) | url }}';
+}, 5000);
+</script>
+<noscript>
+    <meta http-equiv="refresh" content="0;url={{ config.extra.homepage | d(nav.homepage.url, true) | url }}" />
+</noscript>
+{% endblock %}
+
+{% block herocontent %}
+<p style="font-size: xx-large">No witaj, wędrowcze.</p>
+
+<p style="font-size: x-large;">Wygląda na to, że błądzisz.<br>Spokojnie – przekierujemy Cię na jasną stronę mocy.</p>
+{% endblock %}
+
+{% block content %}<a href="/">Przekierowywanie...</a>{% endblock %}

@@ -1,0 +1,117 @@
+site_name: NaukaPythona.com
+site_description: Ucz się po swojemu
+site_url: https://naukapythona.com/
+edit_uri: https://github.com/naukapythona/naukapythona.com/edit/main/public/
+docs_dir: public/
+watch: [public]
+
+theme:
+  name: material
+  language: pl
+  logo: /static/img/logo.svg
+  favicon: /static/img/logo.png
+  icon:
+    annotation: material/help-circle
+  font:
+    text: Chivo
+    code: Ubuntu Mono
+  custom_dir: overrides/
+  features:
+  - announce.dismiss
+  - header.autohide
+  - content.code.annotate
+  - content.code.copy
+  - content.code.view
+  - content.tabs.link
+  - content.tooltips
+  - navigation.footer
+  - navigation.tracking
+  - search.highlight
+  - search.suggest
+  - toc.integrate
+  palette:
+  - media: > 
+      (prefers-color-scheme: light)
+    scheme: default
+    primary: custom
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  - media: > 
+      (prefers-color-scheme: dark)
+    scheme: slate
+    primary: custom
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+
+markdown_extensions:
+- admonition
+- attr_list
+- footnotes
+- codehilite
+- pymdownx.emoji
+- pymdownx.magiclink
+- pymdownx.superfences
+- pymdownx.details
+- md_in_html
+- mdx_include:
+    base_path: public/
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.highlight:
+    use_pygments: true
+
+hooks:
+- hooks/cname.py
+- hooks/hide_sidebars.py
+
+plugins:
+- search
+- markdown-exec
+ 
+nav:
+- "Początek": index.md
+- "Nasi Trenerzy": trainers.md
+
+copyright: |
+  &copy; 2024 Bartosz Sławecki<br>
+  Strona używa <a href="https://squidfunk.github.io/mkdocs-material">MkDocs Material</a>
+
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/NaukaPythona
+    name: NaukaPythona.com na GitHubie
+  - icon: fontawesome/brands/mastodon
+    link: https://fosstodon.org/@bswck
+    name: bswck na Fosstodon
+  - icon: fontawesome/solid/envelope
+    link: mailto:bartoszpiotrslawecki@gmail.com
+    name: Kontakt i zapytania biznesowe
+  generator: false
+  consent:
+    title: Ciasteczka
+    description: | 
+      Czy wyrażasz zgodę na wykorzystywanie plików cookies?
+    actions:
+    - accept
+    - reject
+
+extra_css:
+- static/css/theme.css
+- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+
+- static/css/bubbles.css
+- static/css/iframe.css
+- static/css/recommenders.css
+- static/css/signup-button.css
+- static/css/trainers.css
+
+extra_javascript:
+- static/js/bubbles.js
+- static/js/hero.js
+- static/js/recommenders.js
+- static/js/trainers.js

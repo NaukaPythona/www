@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="150mm"
+   height="150mm"
+   viewBox="0 0 150 150"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs2"><linearGradient
+       id="linearGradient10344"><stop
+         style="stop-color:#3d00aa;stop-opacity:1;"
+         offset="0"
+         id="stop10342" /></linearGradient></defs><g
+     id="layer1"
+     transform="translate(-30,-73.5)"><path
+       id="path11236"
+       style="fill:#3d79aa;stroke-width:0;stroke-miterlimit:0;paint-order:markers fill stroke"
+       d="m 180,148.5 a 75,75 0 0 1 -75,75 75,75 0 0 1 -75,-75 75,75 0 0 1 75,-75 75,75 0 0 1 75,75 z" /><path
+       d="m 62.57365,106.07369 a 60.000001,60.000001 0 0 0 5e-6,84.85275 60.000001,60.000001 0 0 0 84.852745,0 60.000001,60.000001 0 0 0 0,-84.85277 60.000001,60.000001 0 0 0 -84.85275,2e-5 z"
+       style="fill:#ffe262;stroke-width:0;stroke-miterlimit:0;paint-order:markers fill stroke"
+       id="path1" /><g
+       id="g13"><path
+         d="m 140.35537,113.14462 a 50.000035,50.000035 0 0 0 -70.710681,0 50.000035,50.000035 0 0 0 0,70.71067 50.000035,50.000035 0 0 0 70.710681,0 50.000035,50.000035 0 0 0 0,-70.71067 z"
+         style="fill:#3d79aa;fill-opacity:1;stroke-width:0;stroke-miterlimit:0;paint-order:markers fill stroke"
+         id="path1-4" /><rect
+         style="fill:#3d79aa;fill-opacity:1;stroke-width:299.962;stroke-miterlimit:0;-inkscape-stroke:none"
+         id="rect1"
+         width="10"
+         height="140"
+         x="174.25157"
+         y="-39.240856"
+         transform="rotate(45)" /></g><g
+       id="g12"><path
+         d="m 90.857901,113.14462 a 15.000067,15.000022 45 0 0 -21.213215,0 15.000067,15.000022 45 0 0 8e-6,21.21321 15.000067,15.000022 45 0 0 21.213201,-1e-5 15.000067,15.000022 45 0 0 6e-6,-21.2132 z"
+         style="fill:#ffe262;stroke-width:0;stroke-miterlimit:0;paint-order:markers fill stroke"
+         id="path1-9" /><path
+         d="m 140.35539,162.64209 a 15.000078,15.000033 45 0 0 -21.21325,-2e-5 15.000078,15.000033 45 0 0 2e-5,21.21324 15.000078,15.000033 45 0 0 21.21321,-2e-5 15.000078,15.000033 45 0 0 2e-5,-21.2132 z"
+         style="fill:#ffe262;stroke-width:0;stroke-miterlimit:0;paint-order:markers fill stroke"
+         id="path1-9-8" /></g></g></svg>

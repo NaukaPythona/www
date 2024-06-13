@@ -1,0 +1,57 @@
+.trainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trainer-photo {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 4px solid var(--theme-dark-border);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.trainer-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.trainer-bio {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.trainer-bio h2 {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.trainer-bio h2::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -100%;
+  right: -100%;
+  background-color: var(--theme-dark-border);
+  z-index: -1;
+}
+
+@media (max-width: 729px) {
+  .trainer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<div id="bubbles"></div>
+{% if domain %}
+<script defer data-domain="{{ domain }}" src="https://plausible.io/js/script.js"></script>
+{% endif %}
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<div class="hero-container">
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="/static/img/logotype.svg" alt="NaukaPythona.com Logo">
+    </div>
+    {% block herocontent %}<style>.hero-container {display: none;}</style>{% endblock %}
+  </div>
+</div>
+{% endblock %}

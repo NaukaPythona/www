@@ -6,6 +6,7 @@ authors = [
 ]
 dependencies = [
     "textual>=0.70.0",
+    "textual-serve>=1.0.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.11"
@@ -18,6 +19,8 @@ dev-dependencies = [
     "mypy>=1.10.0",
     "pytest>=8.2.2",
     "ruff>=0.4.8",
+    "ipython>=8.25.0",
+    "textual-dev>=1.5.1",
 ]
 
 [tool.ruff]

@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout self
+      uses: actions/checkout@v4
     - name: Create virtual environment
       uses: getsentry/action-setup-venv@v2.1.0
       with:

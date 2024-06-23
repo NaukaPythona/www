@@ -1,0 +1,47 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - production
+    - preview
+
+run-name: Build & deploy to ${{github.ref}}
+
+concurrency:
+  group: pages-${{github.ref}}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  stage: ${{github.ref}}
+  build_ref: build/${{github.ref}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: getsentry/action-setup-venv@v2.1.0
+      with:
+        cache-dependency-path: requirements.lock
+        install-cmd: pip install -r requirements.lock
+    - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{github.ref}}
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+      - uses: actions/checkout@v4
+        ref: ${{env.build_ref}}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

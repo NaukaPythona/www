@@ -1,6 +1,6 @@
 # NaukaPythona.com
 
-Simple static website hosted on GitHub pages.
+A simple static website hosted on GitHub pages that does the job promoting our services.
 
 ## Continuous Integration
 
@@ -10,14 +10,14 @@ Simple static website hosted on GitHub pages.
 
 ## Continuous Delivery
 
+Pushes to particular branches trigger new builds:
+
 ```
 production
 └── build/production
 preview
 └── build/preview
 ```
-
-**Rules**
 
 - Every push to the `production` branch produces a build in the `build/production`
   branch, which is immediately available at https://naukapythona.com

@@ -34,7 +34,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: ${{env.stage}}
+      name: ${{github.ref_name}}
       url: ${{steps.deployment.outputs.page_url}}
     steps:
       - uses: actions/checkout@v4

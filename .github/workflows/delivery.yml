@@ -42,7 +42,7 @@ jobs:
         with:
           repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
           ref: ${{env.build_ref}}
-      - run: git fetch upstream && git push
+      - run: git fetch upstream && git pull
         if: ${{env.stage == 'preview'}}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

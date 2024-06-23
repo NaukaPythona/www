@@ -34,7 +34,7 @@ jobs:
   preview:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{env.stage == 'preview'}}
+    if: ${{github.ref_name == 'preview'}}
     environment:
       name: ${{github.ref_name}}
     steps:

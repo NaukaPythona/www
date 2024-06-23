@@ -5,8 +5,8 @@ authors = [
     { name = "bswck", email = "bartoszpiotrslawecki@gmail.com" }
 ]
 dependencies = [
-    "textual>=0.70.0",
-    "textual-serve>=1.0.3",
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.27",
 ]
 readme = "README.md"
 requires-python = ">= 3.11"
@@ -15,13 +15,7 @@ dynamic = ["version"]
 [tool.rye]
 virtual = true
 managed = true
-dev-dependencies = [
-    "mypy>=1.10.0",
-    "pytest>=8.2.2",
-    "ruff>=0.4.8",
-    "ipython>=8.25.0",
-    "textual-dev>=1.5.1",
-]
+dev-dependencies = []
 
 [tool.ruff]
 exclude = ["scripts/"]

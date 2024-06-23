@@ -44,6 +44,8 @@ jobs:
           ref: ${{env.build_ref}}
       - run: gh repo sync ${{env.preview_repo}} -b ${{env.build_ref}}
         if: ${{env.stage == 'preview'}}
+        env:
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

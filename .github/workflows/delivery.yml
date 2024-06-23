@@ -43,6 +43,6 @@ jobs:
         repository: ${{env.preview_repo}}
         ref: ${{env.build_ref}}
     - run: |
-        git fetch https://${{github.repository}}
+        git fetch https://github.com/${{github.repository}}
         git pull
         git push

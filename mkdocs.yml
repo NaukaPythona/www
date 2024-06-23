@@ -53,7 +53,7 @@ markdown_extensions:
 - pymdownx.superfences
 - md_in_html
 - mdx_include:
-    base_path: content/
+    base_path: public/
 - pymdownx.tabbed:
     alternate_style: true
 - pymdownx.highlight:

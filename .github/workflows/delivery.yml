@@ -38,7 +38,8 @@ jobs:
       url: ${{steps.deployment.outputs.page_url}}
     steps:
       - uses: actions/checkout@v4
-        ref: ${{env.build_ref}}
+        with:
+          ref: ${{env.build_ref}}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

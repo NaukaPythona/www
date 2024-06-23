@@ -26,4 +26,7 @@ preview
 
 ## Legal
 
-© 2024 Bartosz Sławecki @ NaukaPythona.com
+© 2024 Bartosz Sławecki
+© 2024 NaukaPythona.com
+
+All rights reserved.

@@ -40,7 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
+        repository: ${{env.preview_repo}}
         ref: ${{env.build_ref}}
     - run: |
         git fetch https://${{github.repository}}

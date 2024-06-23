@@ -4,7 +4,8 @@ Simple static website hosted on GitHub pages.
 
 ## Continuous Integration
 
-- Dependabot watches dependencies and submits bulk PRs with updates and change summaries.
+- Dependabot watches dependencies and submodules.
+  It then submits bulk PRs with updates and change summaries when necessary.
 
 
 ## Continuous Delivery

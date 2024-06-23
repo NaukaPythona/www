@@ -43,7 +43,7 @@ jobs:
           repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
           ref: ${{env.build_ref}}
       - run: |
-          git remote add upstream ${{github.repository}}
+          git remote add upstream ${{github.repositoryUrl}}
           git fetch upstream
           git pull
         if: ${{env.stage == 'preview'}}

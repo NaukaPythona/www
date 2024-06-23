@@ -18,6 +18,7 @@ permissions:
 
 env:
   stage: ${{github.ref_name}}
+  preview_repo: NaukaPythona/preview.naukapythona.com
   build_ref: build/${{github.ref_name}}
 
 jobs:
@@ -39,7 +40,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
           ref: ${{env.build_ref}}
+      - run: gh repo sync ${{env.preview_repo}} -b ${{env.build_ref}}
+        if: ${{env.stage == 'preview'}}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

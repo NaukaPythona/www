@@ -1,0 +1,16 @@
+on:
+  push:
+  - main
+
+name: Production
+
+jobs:
+  build:
+    steps:
+    - name: Create virtual environment
+      uses: getsentry/action-setup-venv@v2.1.0
+      with:
+        cache-dependency-path: requirements.lock
+        install-cmd: pip install -r requirements.lock
+    - name: Deploy site
+      run: mkdocs gh-deploy --strict --no-history

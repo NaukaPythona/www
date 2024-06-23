@@ -31,25 +31,18 @@ jobs:
         cache-dependency-path: requirements.lock
         install-cmd: pip install -r requirements.lock
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
-  deploy:
+  preview:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{env.stage == 'preview'}}
     environment:
       name: ${{github.ref_name}}
-      url: ${{steps.deployment.outputs.page_url}}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
-          ref: ${{env.build_ref}}
-      - run: |
-          git remote add upstream ${{github.repositoryUrl}}
-          git fetch upstream
-          git pull
-        if: ${{env.stage == 'preview'}}
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - id: deployment
-        uses: actions/deploy-pages@v4
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{env.stage == 'preview' && env.preview_repo || github.repository}}
+        ref: ${{env.build_ref}}
+    - run: |
+        git fetch https://${{github.repository}}
+        git pull
+        git push

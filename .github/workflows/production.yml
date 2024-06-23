@@ -14,4 +14,4 @@ jobs:
       with:
         cache-dependency-path: requirements.lock
         install-cmd: pip install -r requirements.lock
-    - run: mkdocs gh-deploy --strict --no-history --remote-branch production
+    - run: mkdocs gh-deploy --strict --no-history --remote-branch build/production

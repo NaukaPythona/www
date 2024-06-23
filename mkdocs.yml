@@ -69,7 +69,7 @@ plugins:
     repository: NaukaPythona/NaukaPythona.com
 
 nav:
-- Index: strona_glowna.md
+- strona_glowna.md
 - Strona główna: strona_glowna.md
 - Trenerzy: trenerzy.md
 - Nauka:

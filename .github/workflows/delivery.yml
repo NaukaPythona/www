@@ -32,7 +32,7 @@ jobs:
         cache-dependency-path: requirements-dev.lock
         install-cmd: >
           pip install uv
-          && pip uninstall setuptools
+          && pip uninstall setuptools --yes
           && uv pip install -r requirements-dev.lock
     - uses: pypa/gh-action-pip-audit@v1.0.8
       with:

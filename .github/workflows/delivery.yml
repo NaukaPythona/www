@@ -44,7 +44,7 @@ jobs:
       with:
         repository: ${{env.production_repo}}
         ref: ${{env.build_ref}}
-        token: ${{ secrets.PRODUCTION_REPO_TOKEN }} 
+        token: ${{secrets.PRODUCTION_REPO_TOKEN}}
     - run: |
         git remote add preview https://github.com/${{github.repository}}
         git fetch preview

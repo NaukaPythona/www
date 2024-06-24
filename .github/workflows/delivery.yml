@@ -20,6 +20,7 @@ env:
   stage: ${{github.ref_name}}
   preview_repo: NaukaPythona/preview.naukapythona.com
   build_ref: build/${{github.ref_name}}
+  VIRTUAL_ENV: .venv/
 
 jobs:
   build:
@@ -29,10 +30,10 @@ jobs:
     - uses: getsentry/action-setup-venv@v2.1.0
       with:
         cache-dependency-path: requirements-dev.lock
-        install-cmd: pip install uv && uv venv && uv pip install -r requirements-dev.lock
+        install-cmd: pip install uv && uv pip install -r requirements-dev.lock
     - uses: pypa/gh-action-pip-audit@v1.0.0
       with:
-        virtual-environment: .venv/
+        virtual-environment: ${{env.VIRTUAL_ENV}}
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
   preview:
     needs: build

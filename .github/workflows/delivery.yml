@@ -47,4 +47,4 @@ jobs:
         git remote add upstream https://github.com/${{github.repository}}
         git fetch upstream
         git checkout upstream/${{env.build_ref}}
-        git push origin HEAD:${{env.build_ref}}
+        git push origin HEAD:${{env.build_ref}} -f

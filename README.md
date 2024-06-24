@@ -18,7 +18,7 @@ On successful audits, pushes to particular branches trigger new builds:
 preview
 └── build/preview
 
-preview -> production (merge)
+preview → production (merge)
            └── build/production
 ```
 

@@ -73,10 +73,10 @@ plugins:
     repository: NaukaPythona/NaukaPythona.com
 
 nav:
-- Strona główna: strona_glowna.md
+- Początek: index.md
 - Trenerzy: trenerzy.md
 - Nauka:
-  - nauka/nauka.md
+  - nauka/index.md
   - Spotkanie wstępne: nauka/spotkanie_wstepne.md
   - Pierwsze zajęcia: nauka/pierwsze_zajecia.md
 - Zapisy: zapisy.md

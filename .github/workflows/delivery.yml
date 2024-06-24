@@ -18,7 +18,7 @@ permissions:
 
 env:
   stage: ${{github.ref_name}}
-  preview_repo: NaukaPythona/preview.naukapythona.com
+  production_repo: NaukaPythona/naukapythona.com
   build_ref: build/${{github.ref_name}}
   VIRTUAL_ENV: .venv/
 
@@ -38,20 +38,20 @@ jobs:
       with:
         virtual-environment: ${{env.VIRTUAL_ENV}}
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
-  preview:
+  production:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{github.ref_name == 'preview'}}
+    if: ${{github.ref_name == 'production'}}
     environment:
       name: ${{github.ref_name}}
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: ${{env.preview_repo}}
+        repository: ${{env.production_repo}}
         ref: ${{env.build_ref}}
-        token: ${{ secrets.PREVIEW_REPO_TOKEN }} 
+        token: ${{ secrets.PRODUCTION_REPO_TOKEN }} 
     - run: |
-        git remote add upstream https://github.com/${{github.repository}}
-        git fetch upstream
-        git checkout upstream/${{env.build_ref}}
+        git remote add preview https://github.com/${{github.repository}}
+        git fetch preview
+        git checkout preview/${{env.build_ref}}
         git push origin HEAD:${{env.build_ref}} -f

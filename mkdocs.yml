@@ -7,6 +7,7 @@ watch: [public]
 
 theme:
   name: material
+  language: pl
   features:
   - announce.dismiss
   - header.autohide

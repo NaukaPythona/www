@@ -15,10 +15,11 @@ Supply chain security: before any build, the packages are audited for CVEs.
 On successful audits, pushes to particular branches trigger new builds:
 
 ```
-production
-└── build/production
 preview
 └── build/preview
+
+preview -> production (merge)
+           └── build/production
 ```
 
 - Every push to the `preview` branch produces a build in the `build/preview`

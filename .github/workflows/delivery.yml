@@ -44,5 +44,7 @@ jobs:
         ref: ${{env.build_ref}}
         token: ${{ secrets.PREVIEW_REPO_TOKEN }} 
     - run: |
-        git fetch https://github.com/${{github.repository}}
-        git push
+        git remote add upstream https://github.com/${{github.repository}}
+        git fetch upstream
+        git checkout upstream/${{env.build_ref}}
+        git push -u origin

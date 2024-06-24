@@ -20,7 +20,6 @@ env:
   stage: ${{github.ref_name}}
   production_repo: NaukaPythona/naukapythona.com
   build_ref: build/${{github.ref_name}}
-  VIRTUAL_ENV: .venv/
 
 jobs:
   build:
@@ -34,6 +33,9 @@ jobs:
           pip install uv
           && pip uninstall setuptools --yes
           && uv pip install -r requirements-dev.lock
+    - uses: pypa/gh-action-pip-audit@v1.0.8
+      with:
+        virtual-environment: .venv/
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
   production:
     needs: build

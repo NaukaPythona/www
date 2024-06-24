@@ -11,11 +11,6 @@ concurrency:
   group: pages-${{github.ref_name}}
   cancel-in-progress: false
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 env:
   stage: ${{github.ref_name}}
   production_repo: NaukaPythona/naukapythona.com

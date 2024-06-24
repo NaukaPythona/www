@@ -5,6 +5,7 @@ on:
     - production
     - preview
 
+name: Deliver
 run-name: Build & deploy to ${{github.ref_name}}
 
 concurrency:

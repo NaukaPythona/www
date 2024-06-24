@@ -31,6 +31,8 @@ jobs:
         cache-dependency-path: requirements.lock
         install-cmd: pip install -r requirements.lock
     - uses: pypa/gh-action-pip-audit@v1.0.0
+      with:
+        virtual-environment: .venv/
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
   preview:
     needs: build

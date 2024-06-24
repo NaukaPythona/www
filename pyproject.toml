@@ -18,4 +18,6 @@ dynamic = ["version"]
 [tool.rye]
 virtual = true
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "pip-audit>=2.7.3",
+]

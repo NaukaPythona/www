@@ -10,7 +10,9 @@ A simple static website hosted on GitHub pages that does the job promoting our s
 
 ## Continuous Delivery
 
-Pushes to particular branches trigger new builds:
+Supply chain security: before any build, the packages are audited for CVEs.
+
+On successful audits, pushes to particular branches trigger new builds:
 
 ```
 production

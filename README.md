@@ -21,11 +21,11 @@ preview
 └── build/preview
 ```
 
-- Every push to the `production` branch produces a build in the `build/production`
-  branch, which is immediately available at https://naukapythona.com
-
 - Every push to the `preview` branch produces a build in the `build/preview`
   branch, which is immediately available at https://preview.naukapythona.com
+
+- Every push to the `production` branch produces a build in the `build/production`
+  branch, which is available after deployment approval at https://naukapythona.com
 
 ## Development
 

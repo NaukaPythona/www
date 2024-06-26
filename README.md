@@ -1,6 +1,6 @@
 # NaukaPythona.com
 
-A simple static website hosted on GitHub pages that does the job promoting our services.
+A simple static website hosted on GitHub Pages that does the job promoting our services.
 
 ## Continuous Integration
 

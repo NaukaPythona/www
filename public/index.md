@@ -1,5 +1,5 @@
 ---
-title: Strona główna
+title: Początek
 template: home.html
 ---
 <div class="heading" markdown>

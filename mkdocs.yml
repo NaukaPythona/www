@@ -1,5 +1,5 @@
 site_name: NaukaPythona.com
-site_description: Ucz się po swojemu
+site_description: Uczymy po Twojemu!
 site_url: https://naukapythona.com/
 edit_uri: https://github.com/naukapythona/naukapythona.com/edit/main/public/
 docs_dir: public/
@@ -78,7 +78,7 @@ nav:
 
 copyright: |
   &copy; 2024 Bartosz Sławecki<br>
-  Strona używa <a href="https://squidfunk.github.io/mkdocs-material">MkDocs Material</a>
+  Strona korzysta z <a href="https://squidfunk.github.io/mkdocs-material">MkDocs Material</a>
 
 extra:
   social:

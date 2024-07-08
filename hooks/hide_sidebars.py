@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from mkdocs.structure.pages import Page
     from mkdocs.utils.templates import TemplateContext
 
+
 def on_page_context(
     context: TemplateContext,
     page: Page,

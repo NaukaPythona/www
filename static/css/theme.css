@@ -1,0 +1,111 @@
+:root {
+  --md-primary-fg-color:        #306998;
+  --md-primary-fg-color--light: #ffe262ff;
+  --md-primary-fg-color--dark:  #306998;
+
+  --theme-dark-transparent: rgba(55, 118, 171, 0.05);
+  --theme-dark-border: rgba(78, 122, 181, 0.3);
+  --theme-light-transparent: rgba(255, 212, 59, 0.05);
+}
+
+.heading :is(h1, h2, h3) {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+  
+.heading :is(h1, h2, h3)::backdrop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(78, 122, 181, 0.8);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.hero-container {
+  background-color: rgba(55, 118, 171, 0.2);
+  padding: 50px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-logo {
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.hero-bullets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 110px;
+}
+
+.hero-bullet {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-bullet.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-bullet:hover {
+  transform: translateY(-5px);
+}
+
+.hero-bullet .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-bullet strong {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-bullet small {
+  font-size: 1rem;
+}
+
+@media (max-width: 899px) {
+  .hero-container {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+  }
+}

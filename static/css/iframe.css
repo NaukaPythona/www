@@ -1,0 +1,6 @@
+iframe {
+    box-shadow: inset 0px 0px 60px 20px var(--theme-dark-transparent);
+    border-radius: 40px;
+    display: block;
+    margin-top: 15px;
+}

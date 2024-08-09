@@ -29,7 +29,7 @@ jobs:
           pip install uv
           && pip uninstall setuptools --yes
           && uv pip install -r requirements-dev.lock
-    - uses: pypa/gh-action-pip-audit@v1.0.8
+    - uses: pypa/gh-action-pip-audit@v1.1.0
       with:
         virtual-environment: .venv/
     - run: mkdocs gh-deploy --strict --no-history --remote-branch ${{env.build_ref}}
